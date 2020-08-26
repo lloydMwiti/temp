@@ -1,0 +1,99 @@
+{{#partial "content"}}
+    <nav class="nav-fixed  h between">
+        <a href="" class="title left v-100">SQUADS</a>
+        <div class="h nav-center v-100 ">
+            <a href="/" class="nav-link">home</a>
+            <a href="/all" class="nav-link">Reports</a>
+
+        </div>
+        <div class="right v-100">
+            right
+        </div>
+
+    </nav>
+    <div class="burger v">
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+    </div>
+    <div class="hidden-nav v a-center vv-100">
+        <a href="" class="hidden-link">alot of things</a>
+        <a href="/" class="hidden-link">back home</a>
+
+    </div>
+    <div class="top-tier">
+        <div class="top-left v left">
+            <a href="/signup" class="btn h center w-100">Ranger Sign-up</a>
+            <br>
+            {{#if rangers}}
+                <ul class="w-100 v ul">
+                    {{#each rangers}}
+                        <li class="li">Ranger: {{ name }}</li>
+                    {{/each}}
+                </ul>
+
+            {{else}}
+                <p>No rangers here</p>
+            {{/if}}
+        </div>
+    <div class=" top even h ">
+
+        <div class="lorem w-25 v center">
+            <h2>Welcome to Hero Squad</h2>
+            <p>
+                Fill out the form right next if you see any animals in your sector be sure to fill out all fields
+                and be very descriptive where applicable.
+            </p>
+        </div>
+        <span></span>
+        <div class="v left card ">
+            <form action="/from/new" method="POST">
+                <h2>Animal Tracking Form</h2><br>
+                <label for="ranger">Ranger Name</label>
+                {{#if rangers}}
+                <select class="w-100 v left" name="ranger" id="ranger">
+                    {{#each rangers}}
+                        <option class="w-100 opt">{{ name }}</option>
+                    {{/each}}
+
+                </select>
+                {{else}}
+                    <p>no rangers in the ranger table </p>
+                    {{/if}}
+                <br>
+                <label for="name">Animal Name</label>
+                <input id="name" required name="name" type="text">
+                <br>
+                <label for="power">Health State</label>
+                <input id="power" required name="health" type="text">
+                <br>
+                <div class="v left w-100">
+                <label for="region">Which sector are you in(1-12)</label>
+                <input class="" min="1" max="12" required id="region" name="region" type="number">
+                </div>
+                <br>
+                <div class="h around w-100">
+                    <label for="age">Animal Age</label>
+                    <input class="small-input" min="1" max="240" required id="age" name="age" type="number">
+                </div>
+
+
+                <label for="fight">Is It Endangered :</label>
+                <select name="endangered" required id="fight">
+                    <option value="endangered">Endangered</option>
+                    <option value="notEndangered">Not Endangered</option>
+                </select>
+                <span> <br></span>
+                <button type="submit" class="btn w-100" class="btn btn-default">Add Report</button>
+            </form>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+{{/partial}}
+
+{{> layout.hbs}}

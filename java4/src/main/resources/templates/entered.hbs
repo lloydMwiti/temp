@@ -1,0 +1,37 @@
+{{#partial "content"}}
+
+    <div class="ttle">
+        <span></span>
+        <h1 >heres a report of all animals</h1>
+        <a class="nav-link" href="/">home</a>
+    </div>
+
+
+    {{#if person}}
+    <div class=" h-fluid cnt ww-100">
+        {{#each person }} <!--loop-->
+            <div class="cards">
+                <div class="card-title h between">
+                    <p class="fight">Ranger : {{ ranger }}</p>
+                    <p class="smp"></p>
+                </div>
+                <p class="tt">Animal Name: </p>
+                <p class="sp">{{ name }} </p>
+                <p class="tt">Estimate Age: </p>
+                <p class="sp">{{ age }} </p>
+                <p class="tt">Health State:</p>
+                <p class="sp">{{ health }}</p>
+                <p class="tt">It is :</p>
+                <p class="sp">{{ endangered }} </p>
+                <p class="tt">From Sector :<p class="sp">{{ region }} </p></p>
+
+                <p class="tt"><p class="sp">{{ date }} </p></p>
+
+
+            </div>
+        {{/each}}</div>
+    {{else}} <!--no posts!-->
+    <p>No Reports yet... fill out form if you spot any</p>
+    {{/if}}
+    {{/partial}}
+{{> layout.hbs}}
